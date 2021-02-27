@@ -141,18 +141,13 @@ var shop = function() {
     case "REFILL":
     case "refill":
       window.alert("Refilling player's health by 20 for 7 dollars.");
-      
-      // increase health and decrease money
-      playerInfo.health = playerInfo.health + 20;
-      playerInfo.money = playerInfo.money - 7;
+      // calls playerInfo.method to refill health
+      playerInfo.refillHealth();
       break;
     case "UPGRADE":
     case "upgrade":
-      window.alert("Upgrading the player's attack by 6 for 7 dollars.");
-
-      // increase attack and decrease money
-      playerInfo.attack = playerInfo.attack + 6;
-      playerInfo.money = playerInfo.money - 7;
+      // call playerInfo.upgradeAttack()
+      playerInfo.upgradeAttack();
       break;
     case "LEAVE":
     case "leave":
@@ -181,7 +176,6 @@ var randomNumber = function(min, max) {
 
 //Global Variables/Arrays
 var playerInfo = {
-  name: window.prompt("What is your robot's name?"),
   health: 100,
   attack: 10,
   money: 10, 
