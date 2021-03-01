@@ -149,9 +149,8 @@ var endGame = function() {
   
   // retrieve current high score from localStorage
   let highscore = localStorage.getItem("highscore");
-  if (highscore === null) {
-    highscore = 0;
-  }
+  
+  highscore = highscore || 0;
 
   // compare player money with current high score
   if (score > playerInfo.money) {
@@ -289,5 +288,3 @@ var playerInfo = {
 
 // start the game when the page loads
 startGame();
-
-
